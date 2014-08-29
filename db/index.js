@@ -2,8 +2,7 @@ var async = require('async');
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 var ObjectID = require('mongodb').ObjectID;
-// var url = process.env.MONGODB || 'mongodb://127.0.0.1:27017/docs';
-var url = 'mongodb://172.16.15.136:50000/docs';
+var url = process.env.MONGODB || 'mongodb://127.0.0.1:27017/docs';
 
 module.exports = {
     connect:function(tasks,fn){
