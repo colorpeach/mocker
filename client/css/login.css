@@ -1,0 +1,29 @@
+.login-box{
+    width:400px;
+    padding:20px;
+    border:1px solid #ddd;
+    background-color: #FFF;
+    position:absolute;
+    top:100px;
+    left:0;
+    right:0;
+    margin:auto;
+}
+
+.login-box button{
+    width:100%;
+}
+
+.login-box p{
+    text-align:right;
+}
+
+.github-btn{
+    background:url(./images/signin_github.png) no-repeat;
+    display:inline-block;
+    height: 24px;
+    width: 26px;
+    vertical-align: middle;
+    margin-left:10px;
+    cursor:pointer;
+}

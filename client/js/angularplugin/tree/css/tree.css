@@ -1,0 +1,34 @@
+.aui-tree{
+    padding-left:0px;
+}
+
+.aui-tree ul{
+    padding-left:20px;
+}
+
+.aui-tree li{
+    list-style:none;
+    padding-left:0;
+}
+
+.aui-tree a{
+    cursor:pointer;
+}
+
+.aui-active{
+    background-color: #428BCA;
+    color:#fff;
+    padding: 1px 5px;
+}
+
+.aui-active:hover{
+    color:#fff;
+}
+
+.aui-tree-expand{
+
+}
+
+.aui-tree-collapse{
+
+}

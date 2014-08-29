@@ -1,0 +1,18 @@
+script(type='text/ng-template',id='/mock-add.html')
+  div.mock-add-box
+    h3 新增项目
+    div.interface-box
+      form(name='addForm')
+        div.alert.alert-danger(ng-show='errorMsg') {{errorMsg}}
+        div.form-group
+          label.sr-only 项目名称
+          input(type='text',name='name',ng-model='mock.name',ng-required='true')
+        div.form-group
+          label.sr-only 项目描述
+          textarea(name='description',ng-model='mock.description',ng-required='true')
+        div.form-group
+          label.sr-only 是否公开
+          input(type='checkbox',value=true,ng-model='mock.public')
+        div
+          button.btn.btn-primary(ng-click='save()') 保存
+          a.btn.btn-default(href='#/') 取消

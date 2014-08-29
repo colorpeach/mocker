@@ -1,0 +1,19 @@
+extends layout
+
+block css
+  link(rel='stylesheet', href='/css/index.css')
+  
+block content
+  div.tools-box
+    div.box-head 工具
+    div.box-body.clearfix
+      each tool in tools
+        div.tool-item
+          a.tool-link(href='/tools/'+tool.name)
+            div.tool-detail
+              span(class='#{tool.img}')
+          div.tool-title
+            a(href='/tools/'+tool.name) #{tool.title}
+  
+block script
+    script(type='text/javascript',src='/js/index.js')

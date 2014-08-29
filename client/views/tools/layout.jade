@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title #{title}
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/css/normalize.css')
+    link(rel='stylesheet', href='/css/common.css')
+    link(rel='stylesheet', href='/css/icon.css')
+    link(rel='stylesheet', href='/css/Xicon.css')
+    link(rel='stylesheet', href='/css/animate.css')
+    link(rel='stylesheet', href='/css/tools.css')
+    block css
+  body
+    div.top-nav
+      ul.top-nav-list
+        li
+          a.navbar-brand(href='/') DOCS
+      ul.top-nav-list.pull-right
+        if user
+          li
+            a #{user.login}
+          li
+            a(href='/logout',data-tip='退出登录')
+              span.icon-exit
+        if !user && !login
+          li
+            a(href='/login') 登录
+    div.main
+      block content
+      
+    script(type='text/javascript', src='/lib/requirejs/2.1.14/require.js')
+    script.
+      require.config({
+          paths:{
+              mock:'/lib/mock/mock',
+              angular:'/lib/angular/1.1.5/angular',
+              tools:'/js/tools'
+          },
+          shim:{
+              angular:{
+                  exports:'angular'
+              }
+          }
+      });
+    block script

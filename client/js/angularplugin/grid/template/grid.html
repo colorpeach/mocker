@@ -1,0 +1,10 @@
+<table class="{{gridClass}}">
+    <thead>
+        <tr>
+            <th ng-repeat="col in cols" width="{{col.width}}">{{col.name}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in data" xgridrow></tr>
+    </tbody>
+</table>

@@ -1,0 +1,83 @@
+#view{
+    margin-right:210px;
+    position:relative;
+    border-top: 1px solid #FFF;
+}
+
+#view .edit-btn{
+  display:none;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+#view:hover .edit-btn{
+  display:block;
+}
+
+.doc-info{
+  border:solid #DDD;
+  padding: 5px 10px;
+  font-weight: 700;
+  border-width: 1px 1px 1px 3px;
+  margin-right: 210px;
+  margin-top:40px;
+}
+
+.doc-info p{
+  margin:5px 0 ;
+}
+
+#menu{
+    position:fixed;
+    top:72px;
+    left:100%;
+    bottom:10px;
+    overflow-y:auto;
+    text-align:left;
+    width:200px;
+    opacity:.5;
+    transition: all 0.3s;
+    margin-left:-215px;
+}
+
+#menu:hover{
+    opacity:.8;
+}
+
+#menu > li > a {
+    color: #353535;
+    font-weight: bold;
+}
+
+#menu ul{
+    height:0;
+    overflow: hidden;
+}
+
+#menu ul.active{
+    height:auto;
+    max-height:100%;
+}
+
+#menu li{
+    display:block;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+#menu a{
+    color:#999;
+}
+
+#menu a.active{
+    color:#259DFF;
+}
+
+@media(min-width:1170px){
+  #menu{
+    left:50%;
+    margin-left:370px;
+  }
+}
