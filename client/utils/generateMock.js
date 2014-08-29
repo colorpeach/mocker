@@ -10,7 +10,7 @@
     var num = /^\d+$/;
     
     //将扁平数据转为有层级的mock模板
-    exports.do = function(Mock,list,isTpl){
+    exports.action = function(Mock,list,isTpl){
         return !isTpl ? Mock.mock(nestedData(list)) : nestedData(list);
     };
     

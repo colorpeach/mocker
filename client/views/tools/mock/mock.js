@@ -294,7 +294,7 @@ require([
         function(addUnique){
             return function(data,isTpl){
                 addUnique(data);
-                return generateMockTpl.do(Mock,data,isTpl);
+                return generateMockTpl.action(Mock,data,isTpl);
             }
         }
     ])

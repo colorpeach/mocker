@@ -1,8 +1,9 @@
 var Mock = {};
-var mockjs = require("mockjs");
+var mockjs = require("../client/lib/mock/mock.js");
 var mock = require('../models/mock.js');
-var generateMock = require('../client/utils/generateMock.js').do;
+var generateMock = require('../client/utils/generateMock.js').action;
 var baseRes = require('./baseResponse');
+var self = this;
 
 Mock.get_user_mocks = function(req,res){
     var user = req.session.user.login;
@@ -82,6 +83,7 @@ Mock.get = function(req,res){
 
     mock.queryItem(data,function(data){
         var resData = generateMock(mockjs,safeGetValue(data,'0.list.response'));
+        console.log(generateMock(mockjs,safeGetValue(data,'0.list.response'),true));
         res.set({
             'Access-Control-Allow-Origin':'*'
         });
@@ -100,7 +102,9 @@ Mock.get_mock_tpl = function(req,res){
     };
 
     mock.queryItem(data,function(data){
-        var resData = generateMock(mockjs,safeGetValue(data,'0.list'),true);
+        var resData = safeGetValue(data,'0.list') || {};
+        resData.request = generateMock(mockjs,resData.request,true);
+        resData.response = generateMock(mockjs,resData.response,true);
         
         res.jsonp(baseRes(resData));
     });
